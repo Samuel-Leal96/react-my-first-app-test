@@ -1,0 +1,6 @@
+.item-row {
+    display: "flex";
+    alignItems: 'center';
+    gap: 10;
+    marginTop: 10;
+}
