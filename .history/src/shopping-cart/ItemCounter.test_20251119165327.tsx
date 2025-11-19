@@ -31,7 +31,7 @@ describe('ItemCounter', () => {
     test('should decrease count when -1 button is pressed', () => {
         render(<ItemCounter name="Test item" quantity={5} />);
 
-        const [_, buttonSubtract] = screen.getAllByRole('button');
+        const [buttonAdd, buttonSubtract] = screen.getAllByRole('button');
 
         fireEvent.click(buttonSubtract);
 
@@ -42,11 +42,11 @@ describe('ItemCounter', () => {
     test('should not decrease count when -1 button is pressed and quantity is 1', () => {
         render(<ItemCounter name="Test item" quantity={1} />);
 
-        const [_, buttonSubtract] = screen.getAllByRole('button');
+        const [buttonAdd, buttonSubtract] = screen.getAllByRole('button');
 
         fireEvent.click(buttonSubtract);
 
-        expect(screen.getByText('1')).toBeDefined();
+        expect(screen.getByText('0')).toBeDefined();
 
     })
 
